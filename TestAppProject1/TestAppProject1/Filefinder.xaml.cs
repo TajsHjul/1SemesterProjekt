@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using UserControl = System.Windows.Controls.UserControl;
 using MessageBox = System.Windows.Forms.MessageBox;
+using System.Net;
 
 namespace TestAppProject1
 {
@@ -30,8 +31,8 @@ namespace TestAppProject1
         }
         private void Select_click(object sender, EventArgs e)
         {
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
+            string fileContent = string.Empty;
+            string filePath = string.Empty;
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -51,6 +52,7 @@ namespace TestAppProject1
                     using (StreamReader reader = new StreamReader(fileStream))
                     {
                         fileContent = reader.ReadToEnd();
+
                     }
                 }
             }
@@ -65,6 +67,8 @@ namespace TestAppProject1
         private void Download_click(object sender, EventArgs e)
         {
             
+            
+
         }
     }
 }

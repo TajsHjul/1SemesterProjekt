@@ -19,8 +19,9 @@
                 <TextBlock x:Name="OldIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
                 <TextBlock x:Name="WarningMessageBox"  Height="400" Width="250" Margin="20" Background="Crimson"/>
                 <ProgressBar x:Name="DangerZone" Height="400" Width="50" Margin="20"/>
-                <Canvas x:Name="SickGraph" Height="400" VerticalAlignment="Center" HorizontalAlignment="Right" Width="500" Background="LightGray"/>
+                <local:Graph/>
             </StackPanel>
+            
 
         </StackPanel>
 

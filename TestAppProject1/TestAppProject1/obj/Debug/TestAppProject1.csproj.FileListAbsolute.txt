@@ -15,4 +15,5 @@ C:\Users\Tajs\source\repos\TestAppProject1\TestAppProject1\obj\Debug\TestAppProj
 C:\Users\Tajs\source\repos\TestAppProject1\TestAppProject1\obj\Debug\TestAppProject1.csproj.CoreCompileInputs.cache
 C:\Users\Tajs\source\repos\TestAppProject1\TestAppProject1\obj\Debug\TestAppProject1.exe
 C:\Users\Tajs\source\repos\TestAppProject1\TestAppProject1\obj\Debug\TestAppProject1.pdb
-C:\Users\Tajs\source\repos\TestAppProject1\TestAppProject1\obj\Debug\TestAppProject1.csprojAssemblyReference.cache
+C:\Users\Tajs\source\repos\TestAppProject1\TestAppProject1\obj\Debug\Graph.g.cs
+C:\Users\Tajs\source\repos\TestAppProject1\TestAppProject1\obj\Debug\Graph.baml
