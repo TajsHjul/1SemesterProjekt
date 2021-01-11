@@ -13,7 +13,7 @@
             
                 <uc:Filefinder  />
                 
-            </StackPanel>
+            </StackPanel> 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
                 <TextBlock x:Name="NewestIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
                 <TextBlock x:Name="OldIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>

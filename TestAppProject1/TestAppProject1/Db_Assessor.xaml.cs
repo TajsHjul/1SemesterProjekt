@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace TestAppProject1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Db_Assessor.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Db_Assessor : UserControl
     {
-        public MainWindow()
+        public Db_Assessor()
         {
-            InitializeComponent(); this.DataContext = this;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
+            InitializeComponent();
         }
     }
 }
