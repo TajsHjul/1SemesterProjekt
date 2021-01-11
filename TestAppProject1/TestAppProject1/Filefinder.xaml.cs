@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using UserControl = System.Windows.Controls.UserControl;
 using MessageBox = System.Windows.Forms.MessageBox;
 using System.Net;
+using System.Data.SqlClient;
 
 namespace TestAppProject1
 {
@@ -31,6 +32,7 @@ namespace TestAppProject1
         }
         private void Select_click(object sender, EventArgs e)
         {
+
             string fileContent = string.Empty;
             string filePath = string.Empty;
 
@@ -61,14 +63,59 @@ namespace TestAppProject1
         }
         private void Connect_click(object sender, EventArgs e)
         {
+
+            string connectionString = null;
+            string sql = null;
+            SqlDataReader dataReader;
+            SqlConnection connection;
+            SqlCommand command;
+
+            //connectionString afhænger af hvilken type forbindelse der oprettes. Følgende forbinder via Windows Auth.
+            connectionString = "Server= localhost; Database= ChatBotDb01; Integrated Security = SSPI; ";
+            sql = "SELECT * FROM Volunteers";
+            connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sql, connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    MessageBox.Show("Column nummer 7 indeholder " + dataReader.GetValue(7));
+                }
+                dataReader.Close();
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can not open connection!"+ "\n" + ex);
+            }
             
-            
+            MessageBox.Show("Du har nu forbindelse til Databasen. Godt gået ;)");
+
         }
         private void Download_click(object sender, EventArgs e)
         {
-            
-            
+            using (var client = new WebClient())
+            {
+                
+                var url = "https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata";
+                string html = client.DownloadString(url);
+                
+                var pos = html.IndexOf("https://files.ssi.dk/covid19/overvagning/data/data-epidemiologiske-rapport");
+                var endpos = html.IndexOf('"', pos);
+                string link = html.Substring(pos, endpos - pos);
 
+                var decodedLink = WebUtility.HtmlDecode(link);
+                string resource = decodedLink;
+
+                
+                MessageBox.Show(resource);
+                client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata.zip");
+
+            }
+            
         }
     }
 }
