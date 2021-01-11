@@ -1,0 +1,33 @@
+﻿<Window x:Class="TestAppProject1.MainWindow"
+    xmlns:uc="clr-namespace:TestAppProject1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestAppProject1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1500">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            
+                <uc:Filefinder  />
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <TextBlock x:Name="NewestIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
+                <TextBlock x:Name="OldIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
+                <TextBlock x:Name="WarningMessageBox"  Height="400" Width="250" Margin="20" Background="Crimson"/>
+                <ProgressBar x:Name="DangerZone" Height="400" Width="50" Margin="20"/>
+                <local:Graph/>
+            </StackPanel>
+            
+
+        </StackPanel>
+
+    </Grid>
+
+
+
+
+</Window>
