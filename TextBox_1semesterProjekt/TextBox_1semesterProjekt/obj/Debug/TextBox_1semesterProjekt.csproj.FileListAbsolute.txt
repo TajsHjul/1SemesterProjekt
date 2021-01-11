@@ -1,0 +1,15 @@
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\MainWindow.g.cs
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\App.g.cs
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt_MarkupCompile.cache
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt_MarkupCompile.lref
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\bin\Debug\TextBox_1semesterProjekt.exe.config
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\bin\Debug\TextBox_1semesterProjekt.exe
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\bin\Debug\TextBox_1semesterProjekt.pdb
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\MainWindow.baml
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.g.resources
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.Properties.Resources.resources
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csproj.GenerateResource.cache
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csproj.CoreCompileInputs.cache
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.exe
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.pdb
+C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csprojAssemblyReference.cache
