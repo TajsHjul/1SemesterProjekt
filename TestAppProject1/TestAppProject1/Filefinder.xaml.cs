@@ -59,7 +59,7 @@ namespace TestAppProject1
 
 
         }
-        private void Update_click(object sender, EventArgs e)
+        private void Connect_click(object sender, EventArgs e)
         {
             
             
