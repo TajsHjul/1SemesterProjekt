@@ -13,3 +13,17 @@ C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1s
 C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.exe
 C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.pdb
 C:\VSdata\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csprojAssemblyReference.cache
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\MainWindow.g.cs
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\App.g.cs
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt_MarkupCompile.cache
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt_MarkupCompile.lref
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.exe
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.pdb
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\bin\Debug\TextBox_1semesterProjekt.exe.config
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\bin\Debug\TextBox_1semesterProjekt.exe
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\bin\Debug\TextBox_1semesterProjekt.pdb
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\MainWindow.baml
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.g.resources
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.Properties.Resources.resources
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csproj.GenerateResource.cache
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csproj.CoreCompileInputs.cache

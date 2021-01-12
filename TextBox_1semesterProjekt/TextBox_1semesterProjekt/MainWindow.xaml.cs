@@ -28,50 +28,58 @@ namespace TextBox_1semesterProjekt
             InitializeComponent();
         }
 
+
+
+           
+
         private void Button_Click(object sender, RoutedEventArgs e)
+
         {
+                string sql = null;
+                SqlCommand command;
 
-            String post = "localhost";
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[post].ConnectionString);
+                SqlConnection connection = new SqlConnection(@"Server = DATAMATIKERDATA; Database = team2; User Id = t2login; Password = t2login2234;");
+                command = new SqlCommand(sql, connection);
 
-            try 
-            {
-               
 
-                connection.Open();
-                using (SqlCommand command = new SqlCommand())
+
+                try
                 {
+                    connection.Open();
+
+
+
                     command.Connection = connection;
-                    command.CommandText = "SELECT Muncipality.ID FROM Muncipality ";
-                    //whenever you want to get some data from the database
+                    command.CommandText = "SELECT muncipality_name FROM dbo.Muncipality";
                     using (SqlDataReader reader = command.ExecuteReader())
+
                     {
                         while (reader.Read())
                         {
-                            NewData.Text = reader["Muncipality"].ToString();
+                           
+                            NewData.Text = reader["muncipality_name"].ToString();
+
                         }
+
                     }
+                }
+
+                catch (Exception l)
+
+                {
+                    MessageBox.Show("Error:" + l);
+                }
+
+
+                finally
+                {
+
+
 
                 }
 
-                MessageBox.Show("Hello, world.");
-
             }
-
-            catch (Exception l)
-
-            {
-                MessageBox.Show("Error:" + l);
-            }
-           
-
-            finally
-            {
-
-               
-
-            }
-
         }
     }
-}
+
+
