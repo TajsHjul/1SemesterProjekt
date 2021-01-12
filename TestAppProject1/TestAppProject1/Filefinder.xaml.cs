@@ -71,7 +71,9 @@ namespace TestAppProject1
             SqlCommand command;
 
             //connectionString afhænger af hvilken type forbindelse der oprettes. Følgende forbinder via Windows Auth.
-            connectionString = "Server= localhost; Database= ChatBotDb01; Integrated Security = SSPI; ";
+            connectionString = "Server = DATAMATIKERDATA; Database = fraKlausMail; User Id = fraKlausMail; Password = fraKlausMail;";
+
+        
             sql = "SELECT * FROM Volunteers";
             connection = new SqlConnection(connectionString);
             try
