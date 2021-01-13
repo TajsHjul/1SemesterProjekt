@@ -71,14 +71,15 @@ namespace TestAppProject1
             SqlCommand command;
 
             //connectionString afhænger af hvilken type forbindelse der oprettes. Følgende forbinder via Windows Auth.
-            connectionString = "Server = DATAMATIKERDATA; Database = fraKlausMail; User Id = fraKlausMail; Password = fraKlausMail;";
+            connectionString = "Server = DATAMATIKERDATA; Database = team2; User Id =  t2login; Password =  t2login2234;";
 
-        
-            sql = "SELECT * FROM Volunteers";
+
+            sql = "SELECT * FROM Muncipality";
             connection = new SqlConnection(connectionString);
             try
             {
                 connection.Open();
+                MessageBox.Show("Du har nu forbindelse til Databasen. Godt gået ;)");
                 command = new SqlCommand(sql, connection);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
@@ -94,7 +95,7 @@ namespace TestAppProject1
                 MessageBox.Show("Can not open connection!"+ "\n" + ex);
             }
             
-            MessageBox.Show("Du har nu forbindelse til Databasen. Godt gået ;)");
+            
 
         }
         private void Download_click(object sender, EventArgs e)
@@ -113,7 +114,7 @@ namespace TestAppProject1
                 string resource = decodedLink;
 
                 
-                MessageBox.Show(resource);
+                MessageBox.Show("Lokal data er blevet opdateret \n Her er dagens link: "+resource);
                 client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata.zip");
 
             }

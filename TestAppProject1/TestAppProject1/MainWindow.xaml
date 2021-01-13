@@ -12,6 +12,7 @@
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
             
                 <uc:Filefinder  />
+                <uc:UpdateDb  />
                 
                 
             </StackPanel> 

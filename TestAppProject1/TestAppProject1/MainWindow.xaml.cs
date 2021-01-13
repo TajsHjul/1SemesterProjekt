@@ -46,7 +46,7 @@ namespace TestAppProject1
                 MessageBox.Show(resource);
                 client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata"+ DateTime.Parse(time.ToString()).ToString("yyyy-MM-dd")+".zip");
                 
-                    ZipFile.ExtractToDirectory(@"c:\corona_data\NyesteCoronadata"+ DateTime.Parse(time.ToString()).ToString("yyyy-MM-dd") + ".zip", @"c:\corona_data\Coronadata\" + DateTime.Parse(time.ToString()).ToString("yyyy-MM-dd"));
+                    //ZipFile.ExtractToDirectory(@"c:\corona_data\NyesteCoronadata"+ DateTime.Parse(time.ToString()).ToString("yyyy-MM-dd") + ".zip", @"c:\corona_data\Coronadata\" + DateTime.Parse(time.ToString()).ToString("yyyy-MM-dd"));
             }
         }
 

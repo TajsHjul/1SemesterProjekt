@@ -59,8 +59,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataConversion.cs" />
     <Compile Include="ShockBeats.xaml.cs">
       <DependentUpon>ShockBeats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDb.xaml.cs">
+      <DependentUpon>UpdateDb.xaml</DependentUpon>
     </Compile>
     <Page Include="Db_Assessor.xaml">
       <SubType>Designer</SubType>
@@ -96,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ShockBeats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateDb.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
