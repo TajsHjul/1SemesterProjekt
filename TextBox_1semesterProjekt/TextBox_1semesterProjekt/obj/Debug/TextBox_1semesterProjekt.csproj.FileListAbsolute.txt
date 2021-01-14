@@ -27,3 +27,4 @@ C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1seme
 C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.Properties.Resources.resources
 C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csproj.GenerateResource.cache
 C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csproj.CoreCompileInputs.cache
+C:\Users\Gamze\Desktop\1 semester projekt\TextBox_1semesterProjekt\TextBox_1semesterProjekt\obj\Debug\TextBox_1semesterProjekt.csprojAssemblyReference.cache
