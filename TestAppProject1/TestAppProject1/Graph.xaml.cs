@@ -56,19 +56,19 @@ namespace TestAppProject1
                         SmitteData.Add(reader[0].ToString());
                         // NewData.Text = reader["muncipality_name"].ToString();
                     }
-                    SmitteData.RemoveRange(SmitteData.Count-1,1);
-
-                    foreach (string smittedatum in SmitteData)
-                    {
-                        Brottekst = (Brottekst + Convert.ToInt32(smittedatum) + "\n");
-                    }
-
-
+                    SmitteData.RemoveRange(SmitteData.Count-2,2);
+                    
+                        for (int j = SmitteData.Count() - 14; j < SmitteData.Count();)
+                        {
+                            Brottekst = (Brottekst +(SmitteData.Count()-j+1) +" dage siden:\t"+ Convert.ToInt32(SmitteData[j]) + "\n");
+                            j++;
+                        }
+                    
                     
 
                 
 
-                    Advarsel.Text = "Her er dataen for de seneste 14 dage:\n"+ Brottekst;
+                    Advarsel.Text = "Her er dataen for\nde seneste 14 dage:\n\n" + Brottekst;
                     reader.Close();
 
                 }
@@ -111,7 +111,7 @@ namespace TestAppProject1
                     yaxis_geom.Children.Add(new LineGeometry(
                         new Point(xmin - margin / 2, y),
                         new Point(xmin + margin / 2, y)));
-                   Text(xmin - 2* margin, ymin-y, posTest.ToString() , Color.FromRgb(0, 0, 0));
+                   Text(xmin - 3.5* margin, ymin-y, posTest.ToString() , Color.FromRgb(255, 255, 255));
                     posTest += 100;
                 }
 
@@ -126,7 +126,7 @@ namespace TestAppProject1
                 int rownum = SmitteData.Count()-14;
                 Brush brushes = Brushes.Red;
                 Random rand = new Random();
-                    int rowlabl = 14;
+                    int rowlabl = 15;
                     int start_y = (int)ymin;
                     int step2 = (int)ymin;
                     PointCollection points = new PointCollection();
