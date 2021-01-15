@@ -22,43 +22,86 @@ namespace TestAppProject1
     /// </summary>
     public partial class DisplayedData : UserControl
     {
+        //connectionstring + bool for combobox
+        private string connectionString = @"Server = DATAMATIKERDATA; Database = team2; User Id = t2login; Password = t2login2234;";
+        private bool handle = true;
         public DisplayedData()
         {
             InitializeComponent();
 
-            //Display date above DataGrid
-            string date_Today = DateTime.Today.ToString("dd-MM-yyyy");
-
-            Textblock_TodaysDate.Text = date_Today;
+            //Display date for last update.
+            string date_Today = DateTime.UtcNow.ToString("M/dd/yyyy - HH:mm");
+            Textblock_TodaysDate.Text = "Sidst opdateret: " + date_Today;
 
         }
 
-        private void UpdateData_Click(object sender, RoutedEventArgs e)
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //ConnectionString and sqlQuery
-            string connectionString = (@"Server = DATAMATIKERDATA; Database = team2; User Id = t2login; Password = t2login2234;");
-            string sqlQuery = "SELECT * FROM Municipality_test_pos";
+            ComboBox cmb = sender as ComboBox;
+            handle = !cmb.IsDropDownOpen;
+            Handle();
+        }
+
+        //Switch for combobox cases, executing DisplaySqlTable(string FullSqlQuery) results.
+        private void Handle()
+        {
+            try
+            {
+                switch (cmbSelect.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last())
+                {
+                    case "Cases_by_age":
+                        DisplaySqlTable("SELECT * FROM Cases_by_age");
+                        break;
+
+                    case "Municipality_test_pos":
+                        DisplaySqlTable("SELECT * FROM Municipality_test_pos");
+                        break;
+
+                    case "Municipality_tested_persons_time_series":
+                        DisplaySqlTable("SELECT * FROM Municipality_tested_persons_time_series");
+                        break;
+
+                    case "Newly_admitted_over_time":
+                        DisplaySqlTable("SELECT * FROM Newly_admitted_over_time");
+                        break;
+
+                    case "Test_regioner":
+                        DisplaySqlTable("SELECT * FROM Test_regioner");
+                        break;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        //method to display SQL-Query results in datagrid. Write Query in method.
+        private void DisplaySqlTable(string fullSQLquery)
+        {
+            string sqlQuery = fullSQLquery;
 
             SqlConnection connection = new SqlConnection(connectionString);
-
 
             try
             {
                 //Create DataTable and populate it with sqlQuery results
-                DataTable dt_new = new DataTable();
+                DataTable dt = new DataTable();
                 using (connection)
                 {
                     using (SqlCommand cmd = new SqlCommand(sqlQuery, connection))
                     {
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                         {
-                            da.Fill(dt_new);
+                            da.Fill(dt);
                         }
                     }
                 }
 
                 //Set DataGrad to display DataTable
-                DataGrid_NewData.ItemsSource = dt_new.DefaultView;
+                DataGrid_DisplayData.ItemsSource = dt.DefaultView;
             }
 
             catch (Exception ex)
@@ -69,7 +112,7 @@ namespace TestAppProject1
             {
                 if (connection != null && connection.State == ConnectionState.Open) connection.Close();
             }
-
         }
+
     }
 }

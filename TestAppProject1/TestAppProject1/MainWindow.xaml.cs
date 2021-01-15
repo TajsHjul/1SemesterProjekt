@@ -26,7 +26,7 @@ namespace TestAppProject1
     {
         public MainWindow()
         {
-            
+
             string mainFolder = @"c:\corona_data";
             if (Directory.Exists(mainFolder) == true)
                 Directory.Delete(mainFolder, true);
@@ -44,9 +44,6 @@ namespace TestAppProject1
 
                 var decodedLink = WebUtility.HtmlDecode(link);
                 string resource = decodedLink;
-                
-                
-                MessageBox.Show(resource);
                 client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata.zip");
 
                 string zipPath = @"c:\corona_data\NyesteCoronadata.zip";
@@ -64,13 +61,14 @@ namespace TestAppProject1
 
                 MessageBox.Show("Files have been downloaded succesfully and are now ready to be uploaded to database.");
             }
-
         }
         static void deleteFileByName(string fileToDelete)
         {
             string fileToDeleteDirectory = @"C:\corona_data\NyesteCoronaTal\";
             File.Delete(fileToDeleteDirectory + fileToDelete);
         }
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             

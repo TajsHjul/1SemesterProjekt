@@ -4,14 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestAppProject1"
-             mc:Ignorable="d" Height="395" Width="580" Margin="5" >
+             mc:Ignorable="d" Height="395" Width="auto" Margin="5" >
     <Grid>
         <StackPanel>
-            
-            <Button x:Name="UpdateData" Content="Update Table" Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Click="UpdateData_Click"/>
+
             <TextBlock x:Name="Textblock_TodaysDate" FontWeight="Bold" Height="auto" Width="auto" HorizontalAlignment="Center"/>
-            <DataGrid x:Name="DataGrid_NewData" Width="580" Height="300" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White"/>
-            
+
+            <ComboBox Name="cmbSelect" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem>Cases_by_age</ComboBoxItem>
+                <ComboBoxItem>Municipality_test_pos</ComboBoxItem>
+                <ComboBoxItem>Municipality_tested_persons_time_series</ComboBoxItem>
+                <ComboBoxItem>Newly_admitted_over_time</ComboBoxItem>
+                <ComboBoxItem>Test_regioner</ComboBoxItem>
+            </ComboBox>
+
+            <DataGrid x:Name="DataGrid_DisplayData" Width="680" Height="300" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" CanUserAddRows="false" IsReadOnly="True"/>
+
+
         </StackPanel>
     </Grid>
 </UserControl>
