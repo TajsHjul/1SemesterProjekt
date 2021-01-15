@@ -124,14 +124,14 @@ namespace TestAppProject1
                     int start_y = (int)ymin;
                     int step2 = (int)ymin;
                     PointCollection points = new PointCollection();
-                    for (double x = xmin; x <= SmitteData.Count*10; )
+                    for (double x = xmin; x <= xmax; x += step)
                     {
 
                         start_y = step2;
                         points.Add(new Point(x, -Convert.ToDouble(SmitteData[rownum])/1000 + (double)ymin));
-                        
+                        Text(x,10,rownum.ToString(), Color.FromRgb(0,0,0));
                         rownum++;
-                        x += step;
+                        
 
                     }
 
@@ -152,6 +152,22 @@ namespace TestAppProject1
             {
                 if (connection != null && connection.State == ConnectionState.Open) connection.Close();
             }
+
+        }
+        private void Text(double x, double y, string text, Color color)
+        {
+
+            TextBlock textBlock = new TextBlock();
+
+            textBlock.Text = text;
+
+            textBlock.Foreground = new SolidColorBrush(color);
+
+            Canvas.SetLeft(textBlock, x);
+
+            Canvas.SetTop(textBlock, y);
+
+            canGraph.Children.Add(textBlock);
 
         }
         /*private void Window_Loaded(object sender, RoutedEventArgs e)
