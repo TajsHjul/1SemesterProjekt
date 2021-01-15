@@ -62,6 +62,9 @@
     <Compile Include="DisplayedData.xaml.cs">
       <DependentUpon>DisplayedData.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoadingBarWindow.xaml.cs">
+      <DependentUpon>LoadingBarWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShockBeats.xaml.cs">
       <DependentUpon>ShockBeats.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Graph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadingBarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
