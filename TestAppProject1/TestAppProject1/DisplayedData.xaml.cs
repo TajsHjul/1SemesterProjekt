@@ -26,7 +26,7 @@ namespace TestAppProject1
         {
             InitializeComponent();
 
-            //Display date above DataGrid's
+            //Display date above DataGrid
             string date_Today = DateTime.Today.ToString("dd-MM-yyyy");
 
             Textblock_TodaysDate.Text = date_Today;
@@ -37,7 +37,7 @@ namespace TestAppProject1
         {
             //ConnectionString and sqlQuery
             string connectionString = (@"Server = DATAMATIKERDATA; Database = team2; User Id = t2login; Password = t2login2234;");
-            string sqlQuery = "SELECT * FROM dbo.Municipality";
+            string sqlQuery = "SELECT * FROM Municipality_test_pos";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
