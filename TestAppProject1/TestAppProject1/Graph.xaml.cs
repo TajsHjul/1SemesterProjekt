@@ -41,10 +41,10 @@ namespace TestAppProject1
                 command.Connection = connection;
 
                 //MUNCIPALITY
-                command.CommandText = "SELECT Total FROM dbo.Test_regioner";
+                command.CommandText = "SELECT Skive FROM dbo.Municipality_tested_persons_time_series";
 
                 List<string> SmitteData = new List<string>();
-                String ByNavneWithNewLineConstants = "";
+                String Brottekst = "";
 
                 using (SqlDataReader reader = command.ExecuteReader())
 
@@ -57,9 +57,10 @@ namespace TestAppProject1
                         // NewData.Text = reader["muncipality_name"].ToString();
                     }
                     SmitteData.RemoveRange(SmitteData.Count-1,1);
+
                     foreach (string smittedatum in SmitteData)
                     {
-                        ByNavneWithNewLineConstants = (ByNavneWithNewLineConstants + Convert.ToInt32(smittedatum) + "\n");
+                        Brottekst = (Brottekst + Convert.ToInt32(smittedatum) + "\n");
                     }
 
 
@@ -67,7 +68,7 @@ namespace TestAppProject1
 
                 
 
-                    Advarsel.Text = "Her er det viste datasæt\n"+ByNavneWithNewLineConstants;
+                    Advarsel.Text = "Her er dataen for de seneste 14 dage:\n"+ Brottekst;
                     reader.Close();
 
                 }
@@ -75,9 +76,9 @@ namespace TestAppProject1
                 const double margin = 10;
                 double xmin = margin;
                 double xmax = canGraph.Width - margin;
-
+                double ymax = margin;
                 double ymin = canGraph.Height - margin;
-                const double step = 10;
+                const double step = 20;
 
                 // Make the X axis.
                 GeometryGroup xaxis_geom = new GeometryGroup();
@@ -102,11 +103,16 @@ namespace TestAppProject1
                 GeometryGroup yaxis_geom = new GeometryGroup();
                 yaxis_geom.Children.Add(new LineGeometry(
                     new Point(xmin, 0), new Point(xmin, canGraph.Height)));
-                for (double y = step; y <= canGraph.Height - step; y += step)
+                int posTest = 0;
+                for (double y = ymax; y <= canGraph.Height - step; y += step)
                 {
+                    
+                    
                     yaxis_geom.Children.Add(new LineGeometry(
                         new Point(xmin - margin / 2, y),
                         new Point(xmin + margin / 2, y)));
+                   Text(xmin - 2* margin, ymin-y, posTest.ToString() , Color.FromRgb(0, 0, 0));
+                    posTest += 100;
                 }
 
                 Path yaxis_path = new Path();
@@ -117,21 +123,23 @@ namespace TestAppProject1
                 canGraph.Children.Add(yaxis_path);
 
                 //making data sets
-                int rownum = 0;
+                int rownum = SmitteData.Count()-14;
                 Brush brushes = Brushes.Red;
                 Random rand = new Random();
-                
+                    int rowlabl = 14;
                     int start_y = (int)ymin;
                     int step2 = (int)ymin;
                     PointCollection points = new PointCollection();
-                    for (double x = xmin; x <= xmax; x += step)
+                    for (double x = xmin; x <= step*14; x += step)
                     {
-
-                        start_y = step2;
-                        points.Add(new Point(x, -Convert.ToDouble(SmitteData[rownum])/1000 + (double)ymin));
-                        Text(x,10,rownum.ToString(), Color.FromRgb(0,0,0));
-                        rownum++;
                         
+                        start_y = step2;
+                        points.Add(new Point(x, -Convert.ToDouble(SmitteData[rownum]) /5 + (double)ymin));
+                        
+                        Text(x,Convert.ToDouble(ymin+10),rowlabl.ToString(), Color.FromRgb(255, 255, 255));
+                        rownum++;
+                        rowlabl--;
+
 
                     }
 
