@@ -26,6 +26,7 @@ namespace TestAppProject1
     {
         public MainWindow()
         {
+            
             string mainFolder = @"c:\corona_data";
             if (Directory.Exists(mainFolder) == true)
                 Directory.Delete(mainFolder, true);

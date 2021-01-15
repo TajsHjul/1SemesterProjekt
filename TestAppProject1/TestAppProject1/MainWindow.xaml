@@ -21,8 +21,9 @@
 
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
-                <TextBlock x:Name="NewestIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
-                <TextBlock x:Name="OldIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
+
+                <uc:DisplayedData/>
+
                 <TextBlock x:Name="WarningMessageBox"  Height="400" Width="250" Margin="20" Background="Crimson"/>
                 <ProgressBar x:Name="DangerZone" Height="400" Width="50" Margin="20"/>
                 <local:Graph/>

@@ -28,10 +28,9 @@ namespace TestAppProject1
 
             //Display date above DataGrid's
             string date_Today = DateTime.Today.ToString("dd-MM-yyyy");
-            string date_Yesterday = DateTime.Today.AddDays(-1).ToString("dd-MM-yyyy");
 
             Textblock_TodaysDate.Text = date_Today;
-            Textblock_YesterdaysDate.Text = date_Yesterday;
+
         }
 
         private void UpdateData_Click(object sender, RoutedEventArgs e)
