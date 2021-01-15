@@ -8,14 +8,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1500">
     <Grid>
-        <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="218*"/>
+            <ColumnDefinition Width="155*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-            
+
                 <uc:Filefinder  />
                 <uc:UpdateDb  />
-                
-                
-            </StackPanel> 
+
+
+            </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
                 <TextBlock x:Name="NewestIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
                 <TextBlock x:Name="OldIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
@@ -25,7 +29,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
 
-                
+
                 <uc:ShockBeats  />
 
             </StackPanel>

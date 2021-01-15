@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="TestAppProject1.DisplayedData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestAppProject1"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600" >
+    <Grid>
+
+        <Button x:Name="UpdateData" Content="Update" Width="100" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Click="UpdateData_Click"/>
+
+        <TextBlock x:Name="Textblock_TodaysDate" FontWeight="Bold" Margin="11,75,340,410"/>
+        <DataGrid x:Name="DataGrid_NewData" Width="250" Height="400" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Background="White"/>
+
+        <TextBlock x:Name="Textblock_YesterdaysDate" FontWeight="Bold" Margin="328,75,8,410"/>
+        <DataGrid x:Name="DataGrid_OldData" Width="250" Height="400" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Background="White" Grid.Column="1"/>
+
+    </Grid>
+</UserControl>
