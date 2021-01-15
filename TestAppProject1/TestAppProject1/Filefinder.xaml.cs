@@ -18,6 +18,7 @@ using UserControl = System.Windows.Controls.UserControl;
 using MessageBox = System.Windows.Forms.MessageBox;
 using System.Net;
 using System.Data.SqlClient;
+using System.IO.Compression;
 
 namespace TestAppProject1
 {
@@ -100,25 +101,48 @@ namespace TestAppProject1
         }
         private void Download_click(object sender, EventArgs e)
         {
-            using (var client = new WebClient())
-            {
-                
-                var url = "https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata";
-                string html = client.DownloadString(url);
-                
-                var pos = html.IndexOf("https://files.ssi.dk/covid19/overvagning/data/data-epidemiologiske-rapport");
-                var endpos = html.IndexOf('"', pos);
-                string link = html.Substring(pos, endpos - pos);
-
-                var decodedLink = WebUtility.HtmlDecode(link);
-                string resource = decodedLink;
-
-                
-                MessageBox.Show("Lokal data er blevet opdateret \n Her er dagens link: "+resource);
-                client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata.zip");
-
-            }
             
+
+                using (var client = new WebClient())
+                {
+
+                    var url = "https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata";
+                    string html = client.DownloadString(url);
+
+                    var pos = html.IndexOf("https://files.ssi.dk/covid19/overvagning/data/data-epidemiologiske-rapport");
+                    var endpos = html.IndexOf('"', pos);
+                    string link = html.Substring(pos, endpos - pos);
+
+                    var decodedLink = WebUtility.HtmlDecode(link);
+                    string resource = decodedLink;
+
+
+                    MessageBox.Show(resource);
+                    client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata.zip");
+
+                    string zipPath = @"c:\corona_data\NyesteCoronadata.zip";
+                    string extractPath = @"c:\corona_data\NyesteCoronaTal";
+
+                    ZipFile.ExtractToDirectory(zipPath, extractPath);
+                    File.Delete(zipPath);
+
+                    //Delete specific unwanted .csv file(s) in mainFolder by name
+                    deleteFileByName("Cases_by_sex.csv");
+                    deleteFileByName("Deaths_over_time.csv");
+                    deleteFileByName("Municipality_cases_time_series.csv");
+                    deleteFileByName("Region_summary.csv");
+                    deleteFileByName("Test_pos_over_time.csv");
+
+                    MessageBox.Show("Files have been downloaded succesfully and are now ready to be uploaded to database.");
+                }
+
+            
+            
+        }
+        static void deleteFileByName(string fileToDelete)
+        {
+            string fileToDeleteDirectory = @"C:\corona_data\NyesteCoronaTal\";
+            File.Delete(fileToDeleteDirectory + fileToDelete);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace TestAppProject1
         private void Beat_Click(object sender, RoutedEventArgs e)
         {
            
-            SoundPlayer player = new SoundPlayer("..\\..\\Sick_Beats\\System_Shock.wav");
+            SoundPlayer player = new SoundPlayer("..\\..\\Sick_Beats\\EthicalConstraintsRemoved.wav");
             player.Load();
             player.Play();
         }

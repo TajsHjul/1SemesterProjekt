@@ -6,10 +6,11 @@
              xmlns:local="clr-namespace:TestAppProject1"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Crimson">
-        <Canvas Name="canGraph" Background="White"
+    <StackPanel Background="Crimson" Orientation="Horizontal" VerticalAlignment="Center">
+        <TextBox x:Name="Advarsel" Height="400" Width="181" Background="LightGray"  />
+        <Canvas x:Name="canGraph" Background="White"
       Width="300" Height="200"
-      VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="250,330,0,0" VerticalAlignment="Top" Width="24" Height="21" Click="Window_Loaded" RenderTransformOrigin="-3.708,4.559"/>
-    </Grid>
+      VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <Button Content="Opdater Graf?" HorizontalAlignment="Left" Margin="-123,0,0,70" VerticalAlignment="Bottom" Width="89" Height="21" Click="Window_Loaded" RenderTransformOrigin="-3.708,4.559" Background="HotPink"/>
+    </StackPanel>
 </UserControl>

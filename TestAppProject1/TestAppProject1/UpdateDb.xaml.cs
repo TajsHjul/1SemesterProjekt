@@ -29,11 +29,84 @@ namespace TestAppProject1
             
 
         }
+        /*
         private void Update_click(object sender, EventArgs e)
         {
-            DataConversion updatecon = new DataConversion();
-            DateTime updatetime = DateTime.Now;
-            InsertDataIntoSQLServerUsingSQLBulkCopy(GetDataTableFromCSVFile(@"c:\corona_data\NyesteCoronadata" + DateTime.Parse(updatetime.ToString()).ToString("yyyy-MM-dd") + ".zip"));
+
+            //upload .csv files in 'SourceFolderPath' as tables to connectionString database.
+            try
+            {
+                //Declare Variables and provide values
+                string SourceFolderPath = @"C:\corona_data\NyesteCoronaTal";
+                string FileExtension = ".csv";
+                string FileDelimiter = ";";
+                string ColumnsDataType = "NVARCHAR(100)";
+                string SchemaName = "dbo";
+
+                string connectionString = @"Server = DATAMATIKERDATA; Database = team2; User Id = t2login; Password = t2login2234;";
+
+
+
+                //Get files from folder
+                string[] fileEntries = Directory.GetFiles(SourceFolderPath, "*" + FileExtension);
+                foreach (string fileName in fileEntries)
+                {
+
+                    //Create Connection to SQL Server in which you would like to create tables and load data
+                    SqlConnection SQLConnection = new SqlConnection();
+                    SQLConnection.ConnectionString = connectionString;
+
+                    //Writing Data of File Into Table
+                    string TableName = "";
+                    int counter = 0;
+                    string line;
+                    string ColumnList = "";
+
+                    System.IO.StreamReader SourceFile =
+                    new System.IO.StreamReader(fileName);
+
+                    SQLConnection.Open();
+                    while ((line = SourceFile.ReadLine()) != null)
+                    {
+                        if (counter == 0)
+                        {
+
+                            //Read the header and prepare Create Table Statement
+                            ColumnList = "[" + line.Replace(FileDelimiter, "],[") + "]";
+                            TableName = (((fileName.Replace(SourceFolderPath, "")).Replace(FileExtension, "")).Replace("\\", ""));
+                            string CreateTableStatement = "IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[" + SchemaName + "].";
+                            CreateTableStatement += "[" + TableName + "]')";
+                            CreateTableStatement += " AND type in (N'U'))DROP TABLE [" + SchemaName + "].";
+                            CreateTableStatement += "[" + TableName + "]  Create Table " + SchemaName + ".[" + TableName + "]";
+                            CreateTableStatement += "([" + line.Replace(FileDelimiter, "] " + ColumnsDataType + ",[") + "] " + ColumnsDataType + ")";
+                            SqlCommand CreateTableCmd = new SqlCommand(CreateTableStatement, SQLConnection);
+                            CreateTableCmd.ExecuteNonQuery();
+
+                        }
+                        else
+                        {
+
+                            //Prepare Insert Statement and execute to insert data
+                            string query = "Insert into " + SchemaName + ".[" + TableName + "] (" + ColumnList + ") ";
+                            query += "VALUES('" + line.Replace(FileDelimiter, "','") + "')";
+
+                            SqlCommand SQLCmd = new SqlCommand(query, SQLConnection);
+                            SQLCmd.ExecuteNonQuery();
+                        }
+
+                        counter++;
+                    }
+
+                    SourceFile.Close();
+                    SQLConnection.Close();
+                }
+
+                MessageBox.Show(".csv files have been uploaded to database succesfully.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("test" + exception);
+            }
         }
         static void InsertDataIntoSQLServerUsingSQLBulkCopy(DataTable FileData)
         {
@@ -42,7 +115,7 @@ namespace TestAppProject1
                 dbConnection.Open();
                 using (SqlBulkCopy s = new SqlBulkCopy(dbConnection))
                 {
-                    s.DestinationTableName = "Muncipality";
+                    s.DestinationTableName = "dbo.Test_regioner";
                     foreach (var column in FileData.Columns)
                         s.ColumnMappings.Add(column.ToString(), column.ToString());
                     s.WriteToServer(FileData);
@@ -51,20 +124,20 @@ namespace TestAppProject1
         }
         private static DataTable GetDataTableFromCSVFile(string csv_file_path)
         {
-            DataTable csvData;
+            DataTable csvData = new DataTable();
             try
             {
                 using (StreamReader csvReader = new StreamReader(csv_file_path))
                 {
-                    csvData = new DataTable();
-                    string[] headers = csvReader.ReadLine().Split(',');
+                    
+                    string[] headers = csvReader.ReadLine().Split(';');
                     for (int i = 0; i < headers.Count(); i++)
                     {
                         csvData.Columns.Add();
                     }
-                    while (!csvReader.EndOfStream)
+                    if (!csvReader.EndOfStream)
                     {
-                        string[] rows = csvReader.ReadLine().Split(',');
+                        string[] rows = csvReader.ReadLine().Split(';');
                         DataRow datarow = csvData.NewRow();
                         for (int i = 0; i < rows.Count(); i++)
                         {
@@ -77,10 +150,90 @@ namespace TestAppProject1
             }
             catch (Exception ex)
             {
-
-                return null;
+               MessageBox.Show("Kan ikke skabe DataTable fra fil.\n"+ ex);
+               return null;
             }
             return csvData;
+        }
+        */
+        private void CSVtoDATABASE_Click(object sender, RoutedEventArgs e)
+        {
+
+            //upload .csv files in 'SourceFolderPath' as tables to connectionString database.
+            try
+            {
+                //Declare Variables and provide values
+                string SourceFolderPath = @"C:\corona_data\NyesteCoronaTal";
+                string FileExtension = ".csv";
+                string FileDelimiter = ";";
+                string ColumnsDataType = "NVARCHAR(100)";
+                string SchemaName = "dbo";
+
+                string connectionString = @"Server = DATAMATIKERDATA; Database = team2; User Id = t2login; Password = t2login2234;";
+
+
+
+                //Get files from folder
+                string[] fileEntries = Directory.GetFiles(SourceFolderPath, "*" + FileExtension);
+                foreach (string fileName in fileEntries)
+                {
+
+                    //Create Connection to SQL Server in which you would like to create tables and load data
+                    SqlConnection SQLConnection = new SqlConnection();
+                    SQLConnection.ConnectionString = connectionString;
+
+                    //Writing Data of File Into Table
+                    string TableName = "";
+                    int counter = 0;
+                    string line;
+                    string ColumnList = "";
+
+                    System.IO.StreamReader SourceFile =
+                    new System.IO.StreamReader(fileName);
+
+                    SQLConnection.Open();
+                    while ((line = SourceFile.ReadLine()) != null)
+                    {
+                        if (counter == 0)
+                        {
+
+                            //Read the header and prepare Create Table Statement
+                            ColumnList = "[" + line.Replace(FileDelimiter, "],[") + "]";
+                            TableName = (((fileName.Replace(SourceFolderPath, "")).Replace(FileExtension, "")).Replace("\\", ""));
+                            string CreateTableStatement = "IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[" + SchemaName + "].";
+                            CreateTableStatement += "[" + TableName + "]')";
+                            CreateTableStatement += " AND type in (N'U'))DROP TABLE [" + SchemaName + "].";
+                            CreateTableStatement += "[" + TableName + "]  Create Table " + SchemaName + ".[" + TableName + "]";
+                            CreateTableStatement += "([" + line.Replace(FileDelimiter, "] " + ColumnsDataType + ",[") + "] " + ColumnsDataType + ")";
+                            SqlCommand CreateTableCmd = new SqlCommand(CreateTableStatement, SQLConnection);
+                            CreateTableCmd.ExecuteNonQuery();
+
+                        }
+                        else
+                        {
+
+                            //Prepare Insert Statement and execute to insert data
+                            string query = "Insert into " + SchemaName + ".[" + TableName + "] (" + ColumnList + ") ";
+                            query += "VALUES('" + line.Replace(FileDelimiter, "','") + "')";
+
+                            SqlCommand SQLCmd = new SqlCommand(query, SQLConnection);
+                            SQLCmd.ExecuteNonQuery();
+                        }
+
+                        counter++;
+                    }
+
+                    SourceFile.Close();
+                    SQLConnection.Close();
+                }
+
+                MessageBox.Show(".csv files have been uploaded to database succesfully.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("test" + exception);
+            }
+
         }
     }
 }

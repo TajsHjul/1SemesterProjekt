@@ -59,7 +59,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataConversion.cs" />
     <Compile Include="ShockBeats.xaml.cs">
       <DependentUpon>ShockBeats.xaml</DependentUpon>
     </Compile>
@@ -135,6 +134,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sick_Beats\EthicalConstraintsRemoved.wav" />
     <Content Include="Sick_Beats\System_Shock.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
