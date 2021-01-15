@@ -12,8 +12,10 @@
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
             
                 <uc:Filefinder  />
+                <uc:UpdateDb  />
                 
-            </StackPanel>
+                
+            </StackPanel> 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
                 <TextBlock x:Name="NewestIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
                 <TextBlock x:Name="OldIncidentsBox" Height="400" Width="250" Background="LightGray" Margin="20"/>
@@ -21,7 +23,12 @@
                 <ProgressBar x:Name="DangerZone" Height="400" Width="50" Margin="20"/>
                 <local:Graph/>
             </StackPanel>
-            
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+
+                
+                <uc:ShockBeats  />
+
+            </StackPanel>
 
         </StackPanel>
 
