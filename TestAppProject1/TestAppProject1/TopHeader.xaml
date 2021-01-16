@@ -6,6 +6,6 @@
              xmlns:local="clr-namespace:TestAppProject1"
              mc:Ignorable="d" Height="50" Width="390.373">
     <Grid>
-        <TextBlock Text="Covid-19 Applikation" FontSize="40" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Covid-19 Applikation - Team Bravo" FontSize="40" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>

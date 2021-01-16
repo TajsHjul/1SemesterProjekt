@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="LoadingBarWindow" Height="110.322" Width="550.323" ResizeMode="NoResize">
     <Grid>
-        <TextBlock Text="Please wait while files are being downloaded and uploaded to database ..." VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <TextBlock Text="Newest files are being downloaded and uploaded to database ..." VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <ProgressBar x:Name="loadbar" IsIndeterminate="True" Height="20" Width="500"/>
     </Grid>
 </Window>

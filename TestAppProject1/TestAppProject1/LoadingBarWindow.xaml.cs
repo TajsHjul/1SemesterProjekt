@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 namespace TestAppProject1
 {
+    //Author Edgar Prilipa lol
     public partial class LoadingBarWindow : Window
     {
         public LoadingBarWindow()

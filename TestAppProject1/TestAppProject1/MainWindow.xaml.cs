@@ -67,7 +67,7 @@ namespace TestAppProject1
         private void Bg_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             loadingBarWindow.Close();
-            MessageBox.Show("Files have been succesfully uploaded to database.");
+            MessageBox.Show("Files have been succesfully updated & uploaded to database.");
         }
 
         //Author: Edgar Prilipa & Tajs Hjulmann

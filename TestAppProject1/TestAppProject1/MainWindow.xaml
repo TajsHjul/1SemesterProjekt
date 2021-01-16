@@ -10,7 +10,7 @@
     <Grid>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-            <uc:TopHeader HorizontalAlignment="Left" Margin="10"/>
+            <uc:TopHeader HorizontalAlignment="Left" Margin="10" Width="630"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10">

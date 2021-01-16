@@ -30,7 +30,6 @@ namespace TestAppProject1
             //Display date for last update.
             string date_Today = DateTime.UtcNow.ToString("M/dd/yyyy - HH:mm");
             Textblock_TodaysDate.Text = "Sidst opdateret: " + date_Today;
-
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

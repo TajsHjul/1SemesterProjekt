@@ -7,6 +7,7 @@
              mc:Ignorable="d" Height="400" Width="auto">
     <Grid>
         <StackPanel>
+
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Name="Textblock_TodaysDate" FontWeight="Bold" Height="auto" Width="auto" HorizontalAlignment="Left"/>
             </StackPanel>
@@ -20,8 +21,7 @@
             </ComboBox>
 
             <DataGrid x:Name="DataGrid_DisplayData" Width="680" Height="360" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" CanUserAddRows="false" IsReadOnly="True"/>
-
-
+            
         </StackPanel>
     </Grid>
 </UserControl>
