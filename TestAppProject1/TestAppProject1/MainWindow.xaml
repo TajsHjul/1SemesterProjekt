@@ -15,22 +15,13 @@
         <StackPanel Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
 
-                <uc:Filefinder  />
-                <uc:UpdateDb  />
-
-
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10">
 
                 <uc:DisplayedData/>
                 <local:Graph/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
 
-
-                <uc:ShockBeats  />
-
-            </StackPanel>
 
         </StackPanel>
 

@@ -65,21 +65,11 @@
     <Compile Include="LoadingBarWindow.xaml.cs">
       <DependentUpon>LoadingBarWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShockBeats.xaml.cs">
-      <DependentUpon>ShockBeats.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateDb.xaml.cs">
-      <DependentUpon>UpdateDb.xaml</DependentUpon>
-    </Compile>
     <Page Include="Db_Assessor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DisplayedData.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Filefinder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,9 +92,6 @@
     <Compile Include="Db_Assessor.xaml.cs">
       <DependentUpon>Db_Assessor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Filefinder.xaml.cs">
-      <DependentUpon>Filefinder.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Graph.xaml.cs">
       <DependentUpon>Graph.xaml</DependentUpon>
     </Compile>
@@ -112,14 +99,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ShockBeats.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UpdateDb.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

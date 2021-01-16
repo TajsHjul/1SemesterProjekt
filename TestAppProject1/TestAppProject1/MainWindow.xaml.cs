@@ -65,7 +65,7 @@ namespace TestAppProject1
 
         static void DownloadAndUnZipFiles()
         {
-
+            //Download files, unzip, delete zipfolder, delete unwanted files.
             string mainFolder = @"c:\corona_data";
             if (Directory.Exists(mainFolder) == true)
                 Directory.Delete(mainFolder, true);
