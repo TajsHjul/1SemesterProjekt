@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace TestAppProject1
 {
-    /// <summary>
-    /// Interaction logic for LoadingBarWindow.xaml
-    /// </summary>
     public partial class LoadingBarWindow : Window
     {
         public LoadingBarWindow()

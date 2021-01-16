@@ -20,10 +20,13 @@ using System.ComponentModel;
 
 namespace TestAppProject1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    /// 123123
+    /// The MainWindow is responsible for downloading the .zip file containing .csv files from SSI's homepage, and uploading it to the SQL Database.
+    /// All this is done on a sepperate thread upon startup using the BackgroundWorker. 
+    /// While BackgroundWorker downloads and uploads data, a progress bar is shown to indicate the process taking place.
+    /// Messagebox will notify the user upon completion.
+    /// 
+    /// Authors: Edgar Prilipa & Tajs Hjulmann
+
     public partial class MainWindow : Window
     {
         //Initiate loadingbarwindow and backgroundworker
@@ -32,7 +35,7 @@ namespace TestAppProject1
 
         public MainWindow()
         {
-            //Show LoadingBarWindow while backgroundworker does its thing.
+            //Show LoadingBarWindow ontop MainWindow while backgroundworker executes methods.
             this.Show();
             loadingBarWindow.Show();
             loadingBarWindow.Activate();
@@ -181,12 +184,6 @@ namespace TestAppProject1
             {
                 MessageBox.Show("test" + exception);
             }
-        }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

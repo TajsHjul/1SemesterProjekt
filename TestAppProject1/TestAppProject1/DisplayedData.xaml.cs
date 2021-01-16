@@ -17,9 +17,7 @@ using System.Windows.Shapes;
 
 namespace TestAppProject1
 {
-    /// <summary>
-    /// Interaction logic for DisplayedData.xaml
-    /// </summary>
+    /// Author: Edgar Prilipa
     public partial class DisplayedData : UserControl
     {
         //connectionstring + bool for combobox

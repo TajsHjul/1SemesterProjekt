@@ -17,7 +17,8 @@ using System.Windows.Shapes;
 
 namespace TestAppProject1
 {
-    
+    /// Author: Tajs Hjulmann
+
     public partial class Graph : UserControl
     {
         
