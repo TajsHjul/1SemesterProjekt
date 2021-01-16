@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestAppProject1"
-             mc:Ignorable="d" Height="395" Width="auto" Margin="5" >
+             mc:Ignorable="d" Height="400" Width="auto">
     <Grid>
         <StackPanel>
 
@@ -18,7 +18,7 @@
                 <ComboBoxItem>Test_regioner</ComboBoxItem>
             </ComboBox>
 
-            <DataGrid x:Name="DataGrid_DisplayData" Width="680" Height="300" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" CanUserAddRows="false" IsReadOnly="True"/>
+            <DataGrid x:Name="DataGrid_DisplayData" Width="680" Height="360" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" CanUserAddRows="false" IsReadOnly="True"/>
 
 
         </StackPanel>
