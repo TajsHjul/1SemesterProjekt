@@ -7,8 +7,9 @@
              mc:Ignorable="d" Height="400" Width="auto">
     <Grid>
         <StackPanel>
-
-            <TextBlock x:Name="Textblock_TodaysDate" FontWeight="Bold" Height="auto" Width="auto" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="Textblock_TodaysDate" FontWeight="Bold" Height="auto" Width="auto" HorizontalAlignment="Left"/>
+            </StackPanel>
 
             <ComboBox Name="cmbSelect" SelectionChanged="ComboBox_SelectionChanged">
                 <ComboBoxItem>Cases_by_age</ComboBoxItem>

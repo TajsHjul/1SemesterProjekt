@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestAppProject1"
-             mc:Ignorable="d" Height="50" Width="340">
+             mc:Ignorable="d" Height="50" Width="390.373">
     <Grid>
-        <TextBlock Text="Covid-19 Applikation" FontSize="35" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Covid-19 Applikation" FontSize="40" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>

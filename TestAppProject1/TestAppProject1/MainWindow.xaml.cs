@@ -34,7 +34,6 @@ namespace TestAppProject1
         {
             //Show LoadingBarWindow while backgroundworker does its thing.
             loadingBarWindow.Show();
-            loadingBarWindow.Activate();
 
             //Backgroundworker
             bg.DoWork += new DoWorkEventHandler(bg_DoWork);
@@ -59,7 +58,7 @@ namespace TestAppProject1
         //task to run once bg_DoWork finishes.
         private void Bg_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            loadingBarWindow.Close();
+            //loadingBarWindow.Close();
             //MessageBox.Show("Files have been succesfully downloaded and uploaded to database.");
         }
 
