@@ -20,7 +20,7 @@ using System.ComponentModel;
 
 namespace TestAppProject1
 {
-    /// The MainWindow is responsible for downloading the .zip file containing .csv files from SSI's homepage, and uploading it to the SQL Database.
+    /// The MainWindow is responsible for downloading the .zip file containing .csv files from SSI's homepage, and uploading it to the SQL Database tables (and creating them if they don't exist!).
     /// All this is done on a sepperate thread upon startup using the BackgroundWorker. 
     /// While BackgroundWorker downloads and uploads data, a progress bar is shown to indicate the process taking place.
     /// Messagebox will notify the user upon completion.
@@ -33,6 +33,7 @@ namespace TestAppProject1
         LoadingBarWindow loadingBarWindow = new LoadingBarWindow();
         BackgroundWorker bg = new BackgroundWorker();
 
+        //Author: Edgar Prilipa
         public MainWindow()
         {
             //Show LoadingBarWindow ontop MainWindow while backgroundworker executes methods.
@@ -47,6 +48,7 @@ namespace TestAppProject1
         }
 
         //task to be performed by backgroundworker
+        //Author: Edgar Prilipa
         private void bg_DoWork(object sender, DoWorkEventArgs e)
         {
             try
@@ -61,12 +63,14 @@ namespace TestAppProject1
         }
 
         //task to run once bg_DoWork finishes.
+        //Author: Edgar Prilipa
         private void Bg_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             loadingBarWindow.Close();
             MessageBox.Show("Files have been succesfully uploaded to database.");
         }
 
+        //Author: Edgar Prilipa & Tajs Hjulmann
         static void DownloadAndUnZipFiles()
         {
             //Download files, unzip, delete zipfolder, delete unwanted files.
@@ -111,11 +115,14 @@ namespace TestAppProject1
             }
         }
 
+        //Author: Edgar Prilipa
         static void deleteFileByName(string fileToDelete)
         {
             string fileToDeleteDirectory = @"C:\corona_data\NyesteCoronaTal\";
             File.Delete(fileToDeleteDirectory + fileToDelete);
         }
+
+        //Author: Edgar Prilipa & Tajs Hjulmann
         static void UploadCSVfilesToDatabase()
         {
             //upload .csv files in 'SourceFolderPath' as tables to connectionString database.
