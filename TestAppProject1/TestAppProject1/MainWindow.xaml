@@ -14,7 +14,6 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10">
-
             <local:DisplayedData VerticalAlignment="Bottom" Height="432" Margin="5" />
             <local:Graph Margin="5"/>
         </StackPanel>

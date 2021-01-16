@@ -33,7 +33,9 @@ namespace TestAppProject1
         public MainWindow()
         {
             //Show LoadingBarWindow while backgroundworker does its thing.
+            this.Show();
             loadingBarWindow.Show();
+            loadingBarWindow.Activate();
 
             //Backgroundworker
             bg.DoWork += new DoWorkEventHandler(bg_DoWork);
@@ -44,60 +46,68 @@ namespace TestAppProject1
         //task to be performed by backgroundworker
         private void bg_DoWork(object sender, DoWorkEventArgs e)
         {
-            //try
-            //{
-            //    DownloadAndUnZipFiles();
-            //    UploadCSVfilesToDatabase();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            try
+            {
+                DownloadAndUnZipFiles();
+                UploadCSVfilesToDatabase();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //task to run once bg_DoWork finishes.
         private void Bg_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            //loadingBarWindow.Close();
-            //MessageBox.Show("Files have been succesfully downloaded and uploaded to database.");
+            loadingBarWindow.Close();
+            MessageBox.Show("Files have been succesfully uploaded to database.");
         }
 
         static void DownloadAndUnZipFiles()
         {
             //Download files, unzip, delete zipfolder, delete unwanted files.
-            string mainFolder = @"c:\corona_data";
-            if (Directory.Exists(mainFolder) == true)
-                Directory.Delete(mainFolder, true);
-
-            Directory.CreateDirectory(mainFolder);
-            using (var client = new WebClient())
+            try
             {
+                string mainFolder = @"c:\corona_data";
+                if (Directory.Exists(mainFolder) == true)
+                    Directory.Delete(mainFolder, true);
 
-                var url = "https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata";
-                string html = client.DownloadString(url);
+                Directory.CreateDirectory(mainFolder);
+                using (var client = new WebClient())
+                {
 
-                var pos = html.IndexOf("https://files.ssi.dk/covid19/overvagning/data/data-epidemiologiske-rapport");
-                var endpos = html.IndexOf('"', pos);
-                string link = html.Substring(pos, endpos - pos);
+                    var url = "https://covid19.ssi.dk/overvagningsdata/download-fil-med-overvaagningdata";
+                    string html = client.DownloadString(url);
 
-                var decodedLink = WebUtility.HtmlDecode(link);
-                string resource = decodedLink;
-                client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata.zip");
+                    var pos = html.IndexOf("https://files.ssi.dk/covid19/overvagning/data/data-epidemiologiske-rapport");
+                    var endpos = html.IndexOf('"', pos);
+                    string link = html.Substring(pos, endpos - pos);
 
-                string zipPath = @"c:\corona_data\NyesteCoronadata.zip";
-                string extractPath = @"c:\corona_data\NyesteCoronaTal";
+                    var decodedLink = WebUtility.HtmlDecode(link);
+                    string resource = decodedLink;
+                    client.DownloadFile(new Uri(resource), @"c:\corona_data\NyesteCoronadata.zip");
 
-                ZipFile.ExtractToDirectory(zipPath, extractPath);
-                File.Delete(zipPath);
+                    string zipPath = @"c:\corona_data\NyesteCoronadata.zip";
+                    string extractPath = @"c:\corona_data\NyesteCoronaTal";
 
-                //Delete specific unwanted .csv file(s) in mainFolder by name
-                deleteFileByName("Cases_by_sex.csv");
-                deleteFileByName("Deaths_over_time.csv");
-                deleteFileByName("Municipality_cases_time_series.csv");
-                deleteFileByName("Region_summary.csv");
-                deleteFileByName("Test_pos_over_time.csv");
+                    ZipFile.ExtractToDirectory(zipPath, extractPath);
+                    File.Delete(zipPath);
+
+                    //Delete specific unwanted .csv file(s) in mainFolder by name
+                    deleteFileByName("Cases_by_sex.csv");
+                    deleteFileByName("Deaths_over_time.csv");
+                    deleteFileByName("Municipality_cases_time_series.csv");
+                    deleteFileByName("Region_summary.csv");
+                    deleteFileByName("Test_pos_over_time.csv");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
+
         static void deleteFileByName(string fileToDelete)
         {
             string fileToDeleteDirectory = @"C:\corona_data\NyesteCoronaTal\";
