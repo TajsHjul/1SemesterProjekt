@@ -6,16 +6,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestAppProject1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1263.288" ResizeMode="NoResize">
+        Title="MainWindow" Height="573" Width="1265" ResizeMode="NoResize">
     <Grid>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-
+            <uc:TopHeader HorizontalAlignment="Left" Margin="10"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10">
-            <local:DisplayedData VerticalAlignment="Bottom"/>
-            <local:Graph/>
+
+            <local:DisplayedData VerticalAlignment="Bottom" Height="432" Margin="5" />
+            <local:Graph Margin="5"/>
         </StackPanel>
 
 

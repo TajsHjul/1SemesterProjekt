@@ -45,22 +45,22 @@ namespace TestAppProject1
         //task to be performed by backgroundworker
         private void bg_DoWork(object sender, DoWorkEventArgs e)
         {
-            try
-            {
-                DownloadAndUnZipFiles();
-                UploadCSVfilesToDatabase();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    DownloadAndUnZipFiles();
+            //    UploadCSVfilesToDatabase();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         //task to run once bg_DoWork finishes.
         private void Bg_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             loadingBarWindow.Close();
-            MessageBox.Show("Files have been succesfully downloaded and uploaded to database.");
+            //MessageBox.Show("Files have been succesfully downloaded and uploaded to database.");
         }
 
         static void DownloadAndUnZipFiles()

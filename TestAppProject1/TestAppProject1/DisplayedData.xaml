@@ -8,7 +8,7 @@
     <Grid>
         <StackPanel>
 
-            <TextBlock x:Name="Textblock_TodaysDate" FontWeight="Bold" Height="auto" Width="auto" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="Textblock_TodaysDate" FontWeight="Bold" Height="auto" Width="auto" HorizontalAlignment="Left"/>
 
             <ComboBox Name="cmbSelect" SelectionChanged="ComboBox_SelectionChanged">
                 <ComboBoxItem>Cases_by_age</ComboBoxItem>
