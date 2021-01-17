@@ -64,20 +64,20 @@ namespace TestAppProject1
                             
 
                         }
-
+                    Advarsel.Text = "\tPositive COVID-19 Tests\n\tde seneste 15 dage\n\n";
                         gsnit = gsnit / 14;
                     if (gsnit > Convert.ToDouble(SmitteData[SmitteData.Count() - 14]))
-                        { Advarsel.Text = 
+                        { Advarsel.Text += 
                             "\t:::ADVARSEL:::\nMed udgangspunkt i dataen for\nde seneste 15 dage\nanbefales der restriktioner.\n"+
                             "\nGennemstnitlige antal\npositive tests:\n"+Convert.ToInt64(gsnit); }
                     else
-                        Advarsel.Text = ":::INGEN_ADVARSEL:::\nDet gennemsnitlige antal positive tests gennem de seneste 15 dage er " + gsnit + "\n\nYderligere restriktioner anbefales ikke";
+                        Advarsel.Text += ":::INGEN_ADVARSEL:::\nDet gennemsnitlige antal positive tests gennem de seneste 15 dage er " + gsnit + "\n\nYderligere restriktioner anbefales ikke";
                     Advarsel.Text += "\n\nHer er dataen for\nde seneste 15 dage, foruden\ndagens og gårsdagens tal:\n\n" + Brottekst;
                     reader.Close();
 
                 }
 
-                // Alt herefter er graf
+                // Graph
                 const double margin = 10;
                 double xmin = margin;
                 double xmax = canGraph.Width - margin;
@@ -127,7 +127,7 @@ namespace TestAppProject1
                 int rownum = SmitteData.Count()-14;
 
                 Brush brushes = Brushes.Blue;
-                Random rand = new Random();
+                
                     int rowlabl = 15;
                     int start_y = (int)ymin;
                     int step2 = (int)ymin;
