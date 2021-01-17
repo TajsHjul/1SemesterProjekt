@@ -68,10 +68,10 @@ namespace TestAppProject1
                         gsnit = gsnit / 14;
                     if (gsnit > Convert.ToDouble(SmitteData[SmitteData.Count() - 14]))
                         { Advarsel.Text = 
-                            "\t:::ADVARSEL:::\nMed udgangspunkt i dataen for\nde seneste 15 dage\nanbefales der restriktioner"+
-                            "\nGennemstnitlige antal\npositive tests:\n"+gsnit; }
+                            "\t:::ADVARSEL:::\nMed udgangspunkt i dataen for\nde seneste 15 dage\nanbefales der restriktioner.\n"+
+                            "\nGennemstnitlige antal\npositive tests:\n"+Convert.ToInt64(gsnit); }
                     else
-                        Advarsel.Text = ":::INGEN_ADVARSEL:::\nDet gennemsnitlige antal positive tests gennem de seneste 15 dage er " + gsnit + "\nYderligere restriktioner anbefales ikke";
+                        Advarsel.Text = ":::INGEN_ADVARSEL:::\nDet gennemsnitlige antal positive tests gennem de seneste 15 dage er " + gsnit + "\n\nYderligere restriktioner anbefales ikke";
                     Advarsel.Text += "\n\nHer er dataen for\nde seneste 15 dage, foruden\ndagens og gårsdagens tal:\n\n" + Brottekst;
                     reader.Close();
 
